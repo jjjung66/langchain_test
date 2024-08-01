@@ -16,7 +16,7 @@ import streamlit as st
 #print(result)
 
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 
 chatgpt = ChatOpenAI(model_name="gpt-3.5-turbo", max_tokens = 512)
 #answer = chatgpt.invoke("왜 파이썬이 가장 인기있는 프로그래밍 언어야?")
