@@ -24,8 +24,24 @@ chatgpt = ChatOpenAI()
 #print(answer.content)
 
 import streamlit as st
-st.title('인공지능 시인')
+
+#st.title('인공지능 시인')
 #st.title('_streamlit_is :blue[cool] :sunglasses:')
+
+st.set_page_config(
+page_title="DirChat",
+page_icon=":books:")
+
+st.title("_Private Data :red[QA Chat]_ :books:")
+
+
+with st.sidebar:
+   openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+   process = st.button("Process")
+if process:
+   if not openai_api_key:
+      st.info("Please add your OpenAI API key to continue.")
+      st.stop()
 
 content = st.text_input('시의 주제를 제시해주세요.')
 
